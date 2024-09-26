@@ -23,7 +23,7 @@ public class ProveedorDAO {
                 String id_proveedor = resultSet.getString("id_proveedor");
                 String nombre_proveedor = resultSet.getString("nombre_proveedor");
                 String direccion_proveedor = resultSet.getString("direccion_proveedor");
-                Boolean estado_proveedor = resultSet.getBoolean("estado_proveedor");
+                Boolean estado_proveedor = resultSet.getBoolean("estado");
 
                 // Crea el objeto proveedor y lo guarda en lista
                 Proveedor proveedor = new Proveedor(id_proveedor, nombre_proveedor, direccion_proveedor, estado_proveedor);

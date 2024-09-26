@@ -7,7 +7,9 @@ import java.sql.SQLException;
 public class Conexion {
 
     // private static final String URL = "jdbc:sqlserver://LAPTOPDEKENDRIC\\MSSQLSERVER:1433;database=pruebadescripts;encrypt=false;trustServerCertificate=true;";
-    private static final String URL = "jdbc:sqlserver://LAPTOPDEKENDRIC\\MSSQLSERVER:1433;databaseName=pruebadescripts;instance=MSSQLSERVER;encrypt=false;trustServerCertificate=true;integratedSecurity=true;";
+    private static final String URL = "jdbc:sqlserver://LAPTOPDEKENDRIC\\MSSQLSERVER:1433;databaseName=pruebadescripts;instance=MSSQLSERVER;encrypt=false;trustServerCertificate=true;";
+    private static final String USUARIO = "sa";
+    private static final String CONTRASENA = "1234567890";
 
     public static Connection conexion = null;
 
@@ -17,7 +19,7 @@ public class Conexion {
             // Cargar el controlador JDBC de SQL Server
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             // Obtener la conexión a la base de datos
-            conexion = DriverManager.getConnection(URL);
+            conexion = DriverManager.getConnection(URL, USUARIO, CONTRASENA);
         } catch (ClassNotFoundException e) {
             System.err.println("Error al cargar el controlador JDBC de SQL Server: " + e.getMessage());
         } catch (SQLException e) {
